@@ -268,8 +268,26 @@ input {
     top: 10px;
     left: 30px;
 }
+#gacha_box {
+    text-align: center;
+    background-color: #22aff6;
+    padding: 20px;
+    border-radius: 10px;
+}
 
-#gacha_button{
+#gacha_buttonx1{
+    margin: auto;
+    padding: 10px;
+    width: 25%;
+    background: #c6cff4;
+    color: #1e2b60;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 18px;
+}
+#gacha_buttonx5{
     margin: auto;
     padding: 10px;
     width: 25%;
@@ -282,6 +300,20 @@ input {
     border-radius: 18px;
 }
 
+#catches {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555bfe;
+}
+.catch_result {
+    margin-top: 10px;
+}
+
+.catch_image {
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+}
 #gacha_button:hover{
     background-color: #bbb;   
 }

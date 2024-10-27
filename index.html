@@ -149,6 +149,7 @@
                 <div class="gacha">
                     <img class="fishing_img" src="fishing_bg.png" alt="fishing">
                     <img id="boat" class="boat_img" src="boat.png" alt="boat" width="350" height="300">
+
                     
                 </div>
                 
@@ -160,12 +161,22 @@
                 </script>
             
                 <!-- GACHA SYSTEM -->
-                <button id="gacha_button">1 NET</button>
-                <button id="gacha_button">5 NETS</button>
+                
+
+                <div id="gacha_box">
+                    <h1>Fishing Time!</h1>
+                    <button id="gacha_buttonx1">x1 NET</button>
+                    <button id="gacha_buttonx5">x5 NETS</button>
+                    <div id="catches"></div>
+                </div>
+
+                <script src="script.js"></script>
+
                 <!-- POPUP when no bait -->
 
                 <script>
                     // GACHA SYSTEM
+                    
                     // Variables for Rare and Super Rare fish
                     const SSR_Rank = [
                         ['rainbow_jellyfish.png', 1]
