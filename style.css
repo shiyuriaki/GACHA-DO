@@ -3,11 +3,18 @@ body, html{
     margin: 0;
     padding: 0;
     background-color:rgb(128, 153, 229);
-    font-family: Century;
+
+}
+
+@font-face {
+    font-family: 'LoveDays';
+    src: url('Atop.ttf');
 }
 
 .main{
     width: 100%;
+    font-family: LoveDays;
+    
 }
 
 .navbar{
@@ -27,6 +34,61 @@ body, html{
     padding-top: 2px;
     padding-left: 20px;
     float: left;
+}
+
+#home_logo{
+    float: left;
+    text-align: center;
+    margin: 0 15px 0 0;
+}
+
+#home_text{
+    align-self: flex;
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(58, 116, 169);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: aliceblue;
+    font-weight: bold; 
+    font-size: 25px;
+    font-family: LoveDays;
+}
+
+.bait{
+    float: right;
+    display: flex;
+    margin-top: 10px;
+    margin-right: 30px;
+    text-decoration: none;
+    color: rgb(58, 116, 169);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: aliceblue;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.baitBucket img{
+    float: right;
+    margin-top: 3%;
+    margin-right: -5.5%;
+}
+
+@keyframes fishJiggle{
+    0% {transform: translate(0, 0) rotate(0deg);}
+    25% {transform: translate(5px, 5px) rotate(5deg);}
+    50% {transform: translate(0, 0) rotate(0deg);}
+    75% {transform: translate(-5px, 5px) rotate(-5deg);}
+    100% {transform: translate(0, 0) rotate(0deg);}
+}
+
+@keyframes gentleRock{
+    0% {transform: rotate(-5deg);}
+    50% {transform: rotate(5deg);}
+    100% {transform: rotate(-5deg);}
 }
 
 /* TABS */
@@ -62,7 +124,7 @@ ul li{
     list-style: none;
     margin-left: 60px;
     margin-top: 50px;
-    font-size: 17px;
+    font-size: 25px;
 }
 
 ul li a{
@@ -70,14 +132,13 @@ ul li a{
     color: rgb(58, 116, 169);
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: aliceblue;
-    font-family: Verdana;
-    font-weight: bolder;
+    font-weight: bold;
     transition: 0.3s ease-in-out;
 }
 
 ul li a:hover{
     color: rgb(89, 91, 94);
-    font-size: 20px;
+    font-size: 27px;
 }
 
 /* TODO TAB */
@@ -87,7 +148,7 @@ ul li a:hover{
 }
 
 ul1 {
-    margin: 0px;
+    margin: 10px;
     padding: 0px;
     float: left;
     display: flex;
@@ -99,10 +160,13 @@ ul1 {
 ul1 li1{
     cursor: pointer;
     position: relative;
-    padding: 12px 8px 12px 40px;
+    padding: 12px 12px 12px 40px;
     list-style-type: none;
     background: #caedff;
+    color: #0a184d;
+    margin-bottom: 10px;
     font-size: 18px;
+    border-radius: 8px;
     transition: 0.2s;
 
     -webkit-user-select: none;
@@ -113,6 +177,8 @@ ul1 li1{
 
 ul1 li1:nth-child(odd) {
     background: #caedff;
+    color: #475db6;
+    margin-bottom: 10px;
 }
 
 
@@ -159,7 +225,7 @@ ul1 li1.checked::before {
 input {
     margin: 0;
     border: none;
-    border-radius: 0;
+    border-radius: 8px;
     width: 75%;
     padding: 10px;
     float: left;
@@ -168,14 +234,14 @@ input {
 .addBtn {
     padding: 10px;
     width: 25%;
-    background: #d9d9d9;
-    color: #555;
+    background: #c6cff4;
+    color: #1e2b60;
     float: left;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
-    border-radius: 0;
+    border-radius: 8px;
 }
 .addBtn:hover {
     background-color: #bbb;
@@ -183,33 +249,59 @@ input {
 
 /* GACHA IMAGES */
 .gacha {
-    position:relative;
-    top: 0;
-    left: 0;
-}
-.image1 {
     position: relative;
     top: 0;
     left: 0;
 }
-.image2 {
+
+.fishing_img {
+    margin: 0 auto;
+    margin-top: -5%;
+    position: bottom;
+    display: block;
+    max-width: 100%;
+}
+
+.boat_img {
     position: absolute;
-    top: 30px;
+    margin-top: 5%;
+    top: 10px;
     left: 30px;
 }
 
-/* AQUARIUM TAB */
-
-#aquarium_box{
-    margin-left: -100px;
-    width: 800px;
-    height: 400px;
-    border: 0px solid white;
+#gacha_button{
+    margin: auto;
     padding: 10px;
-    overflow: visible;
+    width: 25%;
+    background: #c6cff4;
+    color: #1e2b60;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 18px;
 }
 
-table, th, td{
-    border: 1px solid;
-    width: 100%;
+#gacha_button:hover{
+    background-color: #bbb;   
+}
+/* AQUARIUM TAB */
+#aquarium_box{
+    margin-top: -150px;
+
+}
+
+.aquarium_text{
+    position: absolute;
+    top:45%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    text-decoration: none;
+    color: rgb(58, 116, 169);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: aliceblue;
+    font-weight: bold; 
+    font-size: 35px;
+    font-family: LoveDays;
 }

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- <audio src="/music/good_enough.mp3" controls></audio> -->
+ 
 <head>
     <title>GACHA-DO</title>
     <link rel="stylesheet" href="style.css">
@@ -9,24 +11,51 @@
         <div class="navbar">
             <!-- LOGO -->
             <div class="icon">
-                <a href="#"><h2 class="logo"><img src="gacha_do.png" alt="GACHA-DO" width=85% height=85%></h2></a>
+                <a href="#" class="tablinks" onclick="openTab(event, 'HOME')"><h2 class="logo"><img src="gacha_do.png" alt="GACHA-DO" width=85% height=85% style="animation: gentleRock 6s infinite;"></h2></a>
             </div>  
             
-            <!-- SCORE -->
-            <p>Score: <span id="score">1</span></p>
+            <!-- BAIT SCORE -->
+            <div class="bait"><p>Bait: <span id="bait">1</span></p></div>
+            <div class="baitBucket"><img src="bait_bucket.png" alt="Bait Bucket" width=7% height=7%></div>
+
 
             <!-- TABS -->
+
             <div class="tab">
                 <ul>
-                    <li><a href="#" class="tablinks" onclick="openTab(event, 'TO-DO')" id="defaultOpen">TO-DO</a></li>
+                    <li><a href="#" class="tablinks" onclick="openTab(event, 'HOME')" id="defaultOpen">HOME</a></li>
+                    <li><a href="#" class="tablinks" onclick="openTab(event, 'TO-DO')">TO-DO</a></li>
                     <li><a href="#" class="tablinks" onclick="openTab(event, 'GACHA')">GACHA</a></li>
                     <li><a href="#" class="tablinks" onclick="openTab(event, 'AQUARIUM')">AQUARIUM</a></li>
                 </ul>
             </div>
             
+            <!-- HOME -->
+             <div id="HOME" class="tabcontent">
+                <h1 id="home_logo"><img src="gacha_do.png" alt="GACHA-DO" width=40% height=40% style="margin-left: 40px;animation: gentleRock 5s infinite;"></h1>
+                <h3 id="home_text">Welcome to GACHA-DO! The interactive GACHA-To-Do List</h3>
+                <h3>Here, you can collect an assortment of fish!!</h3>
+                <ul>
+                    <li style="margin-left: 15%;">
+                        <img src="red_fish.png" alt="red fish" width=20% style="animation: fishJiggle 0.715s infinite;">
+                        <img src="purple_fish.png" alt="purple fish" width=20% style="animation: fishJiggle 0.721s infinite;">
+                        <img src="green_fish.png" alt="green fish" width=20% style="animation: fishJiggle 0.733s infinite;">
+                        <img src="pink_squid.png" alt="pink squid" width=20% style="animation: fishJiggle 0.745s infinite;">
+                        <img src="blue_squid.png" alt="blue squid" width=20% style="animation: fishJiggle 0.751s infinite;">
+                        <img src="green_squid.png" alt="green squid" width=20% style="animation: fishJiggle 0.761s infinite;">
+                        <img src="hammerhead_gray.png" alt="hammerhead gray" width=20% style="animation: fishJiggle 0.77s infinite;">
+                        <img src="hammerhead_purple.png" alt="hammerhead purple" width=20% style="animation: fishJiggle 0.718s infinite;">
+                        <img src="blue_jellyfish.png" alt="blue jellyfish" width=20% style="animation: fishJiggle 0.79s infinite;">
+                        <img src="purple_jellyfish.png" alt="purple jellyfish" width=20% style="animation: fishJiggle 0.712s infinite;">
+                        <img src="blue_jellyfish.png" alt="blue jellyfish" width=20% style="animation: fishJiggle 0.713s infinite;">
+                        <img src="rainbow_jellyfish.png" alt="rainbow jellyfish" width=20% style="animation: fishJiggle 0.714s infinite;">
+                    </li>
+                </ul>
+             </div>
+
             <!-- TO-DO PAGE -->
             <div id="TO-DO" class="tabcontent">                
-                <h3>TODO</h3>
+                <h3>TODO LIST</h3>
                 <input type="text" id="myInput" placeholder="Today I will...">
                 <span onclick="newElement()" class="addBtn">Add</span>
 
@@ -36,15 +65,15 @@
                 </ul1>
     
                 <script>
-                    // Increases score
-                    function increaseScore() {
-                        score++;
-                        scoreElement.textContent = score;
+                    // Increases bait score
+                    function increaseBait() {
+                        bait++;
+                        baitElement.textContent = bait;
                     }
 
-                    function decreaseScore() {
-                        score -= 1
-                        scoreElement.textContent = score;
+                    function decreaseBait() {
+                        bait -= 1
+                        baitElement.textContent = bait;
                     }
 
                     // Create close button
@@ -73,12 +102,12 @@
                         if (ev.target.tagName === "LI1") {
                             ev.target.classList.toggle("checked");
                         
-                        // Increase or decrease score when item is checked/unchecked
+                        // Increase or decrease bait score when item is checked/unchecked
                         if (ev.target.classList.contains("checked")) {
-                            increaseScore();
+                            increaseBait();
                         }
                         else {
-                            decreaseScore();
+                            decreaseBait();
                         }
                         }
                     }, false);
@@ -109,46 +138,85 @@
                         }
                     }
                     // Tracking score
-                    let score = 1
-                    const scoreElement = document.getElementById("score");
+                    let bait = 1
+                    const baitElement = document.getElementById("bait");
                     </script>
 
             </div>
 
             <!-- GACHA PAGE -->
             <div id="GACHA" class="tabcontent">
-
                 <div class="gacha">
-                    <img class="image1" src="fishing_bg.jpg" alt="fishing" width="1188" height="550">
-                    <img id="boat" class="image2" src="boat.png" alt="boat" width="450" height="400">
+                    <img class="fishing_img" src="fishing_bg.png" alt="fishing">
+                    <img id="boat" class="boat_img" src="boat.png" alt="boat" width="350" height="300">
                     
                 </div>
                 
-                
-
                 <script type="text/javascript">
                     document.addEventListener("mousemove", moveElement);
-
                     function moveElement(event) {
-                        document.getElementById("boat").style.left = event.clientX + "px";
-                        
-
+                        document.getElementById("boat").style.left = (event.clientX-350) + "px";
                     }
-
                 </script>
-                
+            
+                <!-- GACHA SYSTEM -->
+                <button id="gacha_button">1 NET</button>
+                <button id="gacha_button">5 NETS</button>
+                <!-- POPUP when no bait -->
 
+                <script>
+                    // GACHA SYSTEM
+                    // Variables for Rare and Super Rare fish
+                    const SSR_Rank = [
+                        ['rainbow_jellyfish.png', 1]
+                    ]
+
+                    const SR_Rank = [
+                        ['blue_jellyfish.png', 2],
+                        ['purple_jellyfish.png', 3],
+                        ['hammerhead_gray.png', 4],
+                        ['hammerhead_purple.png', 5],
+                    ]
+
+                    const R_Rank = [
+                        ['red_fish.png', 6],
+                        ['green_fish.png', 7],
+                        ['purple_fish.png', 8],
+                    ]
+                
+                    var R_Rate = Range(6,9);
+                    var SR_Rate = Range(2,6);
+                    var SSR_Rate = Range(1);
+                    
+                </script>
             </div>
 
             <!-- AQUARIUM -->
             <div id="AQUARIUM" class="tabcontent">
-                <img src="hammerhead_gray.png" draggable="true" ondragstart="drag(evt)" id="hhgry" width="10%" height="10%">
-                <div id="aquarium_box" ondrop="drop(evt)" ondragover="allowDrop(evt)">
-                    <img src="aquarium_temp.jpg" alt="Aquarium Box" style="width: 800px;height: 400px;">
-                </div>
-                <div id="fish_collection"></div>
+                <div id="aquarium_box" style="display: flex; align-items: center;">
+                    <img src="aquarium_box.png" alt="Aquarium Box" style="width: 800px;height: 500px;margin: auto;"></div>              
+                    <div class="aquarium_text">Your Aquarium</div>
+                    <div id="fish_collection" style="padding-left: 20px;">
+                        <ul>
+                            <li style="left: 50%; display: inline-block;">
+                                <img src="red_fish.png" alt="red fish" width=20% style="animation: fishJiggle 0.715s infinite;">
+                                <img src="purple_fish.png" alt="purple fish" width=20% style="animation: fishJiggle 0.721s infinite;">
+                                <img src="green_fish.png" alt="green fish" width=20% style="animation: fishJiggle 0.733s infinite;">
+                                <img src="pink_squid.png" alt="pink squid" width=20% style="animation: fishJiggle 0.745s infinite;">
+                                <img src="blue_squid.png" alt="blue squid" width=20% style="animation: fishJiggle 0.751s infinite;">
+                                <img src="green_squid.png" alt="green squid" width=20% style="animation: fishJiggle 0.761s infinite;">
+                                <img src="hammerhead_gray.png" alt="hammerhead gray" width=20% style="animation: fishJiggle 0.77s infinite;">
+                                <img src="hammerhead_purple.png" alt="hammerhead purple" width=20% style="animation: fishJiggle 0.718s infinite;">
+                                <img src="blue_jellyfish.png" alt="blue jellyfish" width=20% style="animation: fishJiggle 0.79s infinite;">
+                                <img src="purple_jellyfish.png" alt="purple jellyfish" width=20% style="animation: fishJiggle 0.712s infinite;">
+                                <img src="blue_jellyfish.png" alt="blue jellyfish" width=20% style="animation: fishJiggle 0.713s infinite;">
+                                <img src="rainbow_jellyfish.png" alt="rainbow jellyfish" width=20% style="animation: fishJiggle 0.714s infinite;">
+                            </li>
+                        </ul>
+                    </div>
+
             </div>
-            
+
             <!-- JScript for TABS -->
             <script>
                 function openTab(evt, tabName){
@@ -168,24 +236,6 @@
                 }
                 document.getElementById("defaultOpen").click();
             </script>
-
-            <!-- JScript for Draggable Fishies -->
-            <script>
-            function allowDrop(fish){
-                fish.preventDefault();
-            }
-
-            function drag(fish){
-                fish.dataTransfer.setData("text", fish.target.id);
-            }
-
-            function drop(fish){
-                fish.preventDefault();
-                var data = fish.dataTransfer.getData("text");
-                fish.target.appendChild(document.getElementById(data));
-            }
-            </script>
-
         </div>
     </div>
 </body>
