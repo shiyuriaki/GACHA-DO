@@ -12,9 +12,9 @@ const fishies = [
 ];
 
 const fishImages = {
-    "Common": ['red_fish.png', 'green_fish.png', 'purple_fish.png'],
+    "Common": ['red_fish.png', 'green_fish.png', 'purple_fish.png', 'pink_shell.png', 'purple_shell.png'],
     "Rare": ['blue_jellyfish.png', 'purple_jellyfish.png', 'hammerhead_gray.png', 'hammerhead_purple.png'],
-    "Exotic": ['rainbow_jellyfish.png'],
+    "Exotic": ['rainbow_jellyfish.png', 'rainbow_shell.png'],
 
 };
 
@@ -47,7 +47,7 @@ function updateTotalcatches() {
     const catchesDiv = document.getElementById("catches");
     catchesDiv.innerHTML = totalCatches.map((fish, index) =>
         `<div class="catch_result">
-            <p>Catch ${index + 1}: Caught a ${fish.rarity} ${fish.name}!</p>
+            <p>Catch ${index + 1}: Caught a ${fish.rarity} ${fish.image.split('.png')}!</p>
             <img src="${fish.image}" alt="${fish.rarity} image" class="catch_image">
         </div>`
         

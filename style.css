@@ -47,6 +47,17 @@ body, html{
     text-align: center;
 }
 
+h1{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(58, 116, 169);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: aliceblue;
+    font-weight: bold; 
+    font-size: 25px;
+    font-family: LoveDays;
+}
+
 h3{
     text-align: center;
     text-decoration: none;
@@ -270,7 +281,7 @@ input {
 }
 #gacha_box {
     text-align: center;
-    background-color: #22aff6;
+    background-color: transparent;
     padding: 20px;
     border-radius: 10px;
 }
@@ -282,28 +293,52 @@ input {
     background: #c6cff4;
     color: #1e2b60;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     transition: 0.3s;
-    border-radius: 18px;
+    border-radius: 20px;
+    color: rgb(27, 58, 87);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: aliceblue;
+    font-weight: bold;
+    font-family: LoveDays;
+    transition: 0.3s ease-in-out;
 }
+#gacha_buttonx1:hover{
+    color: #9ba9e5;
+    background-color: #4056a7;
+}
+
 #gacha_buttonx5{
     margin: auto;
     padding: 10px;
     width: 25%;
     background: #c6cff4;
-    color: #1e2b60;
+    color: rgb(31, 44, 97);
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     transition: 0.3s;
-    border-radius: 18px;
+    border-radius: 20px;
+    color: rgb(27, 58, 87);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: aliceblue;
+    font-weight: bold;
+    font-family: LoveDays;
+    transition: 0.3s ease-in-out;
+}
+
+#gacha_buttonx5:hover{
+    color: #9ba9e5;
+    background-color: #4056a7;
 }
 
 #catches {
     margin-top: 20px;
     font-size: 18px;
-    color: #555bfe;
+    color: rgb(31, 44, 97);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: aliceblue;
 }
 .catch_result {
     margin-top: 10px;
