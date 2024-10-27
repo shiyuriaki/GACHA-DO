@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- <audio src="/music/good_enough.mp3" controls></audio> -->
- 
 <head>
     <title>GACHA-DO</title>
     <link rel="stylesheet" href="style.css">
@@ -15,7 +13,7 @@
             </div>  
             
             <!-- SCORE -->
-            <div class="bait"><p>Bait: <span id="bait">1</span></p></div>
+            <p>Score: <span id="score">1</span></p>
 
             <!-- TABS -->
             <div class="tab">
@@ -38,15 +36,15 @@
                 </ul1>
     
                 <script>
-                    // Increases bait score
-                    function increaseBait() {
-                        bait++;
-                        baitElement.textContent = bait;
+                    // Increases score
+                    function increaseScore() {
+                        score++;
+                        scoreElement.textContent = score;
                     }
 
-                    function decreaseBait() {
-                        bait -= 1
-                        baitElement.textContent = bait;
+                    function decreaseScore() {
+                        score -= 1
+                        scoreElement.textContent = score;
                     }
 
                     // Create close button
@@ -75,12 +73,12 @@
                         if (ev.target.tagName === "LI1") {
                             ev.target.classList.toggle("checked");
                         
-                        // Increase or decrease bait score when item is checked/unchecked
+                        // Increase or decrease score when item is checked/unchecked
                         if (ev.target.classList.contains("checked")) {
-                            increaseBait();
+                            increaseScore();
                         }
                         else {
-                            decreaseBait();
+                            decreaseScore();
                         }
                         }
                     }, false);
@@ -111,54 +109,46 @@
                         }
                     }
                     // Tracking score
-                    let bait = 1
-                    const baitElement = document.getElementById("bait");
+                    let score = 1
+                    const scoreElement = document.getElementById("score");
                     </script>
 
             </div>
 
             <!-- GACHA PAGE -->
             <div id="GACHA" class="tabcontent">
+
+                <div class="gacha">
+                    <img class="image1" src="fishing_bg.jpg" alt="fishing" width="1188" height="550">
+                    <img id="boat" class="image2" src="boat.png" alt="boat" width="450" height="400">
+                    
+                </div>
                 
+                
+
+                <script type="text/javascript">
+                    document.addEventListener("mousemove", moveElement);
+
+                    function moveElement(event) {
+                        document.getElementById("boat").style.left = event.clientX + "px";
+                        
+
+                    }
+
+                </script>
+                
+
             </div>
 
             <!-- AQUARIUM -->
             <div id="AQUARIUM" class="tabcontent">
-                <!-- <img src="hammerhead_gray.png" draggable="true" ondragstart="drag(evt)" id="hhgry" width="10%" height="10%">-->
+                <img src="hammerhead_gray.png" draggable="true" ondragstart="drag(evt)" id="hhgry" width="10%" height="10%">
                 <div id="aquarium_box" ondrop="drop(evt)" ondragover="allowDrop(evt)">
-                    <img src="aquarium_box.png" alt="Aquarium Box" style="width: 800px;height: 500px;margin: auto;">
+                    <img src="aquarium_temp.jpg" alt="Aquarium Box" style="width: 800px;height: 400px;">
                 </div>
                 <div id="fish_collection"></div>
             </div>
             
-            <!-- GACHA SYSTEM -->
-            
-            <!-- POPUP when no bait -->
-            <div class="noBait" onclick="noBait()">Click me!
-                <span class="noBaittext" id ="noBait">Popup text...</span>
-            </div>
-
-            <script>
-                // When the user clicks on <div>, open the popup
-                function myFunction() {
-                  var popup = document.getElementById("myPopup");
-                  popup.classList.toggle("show");
-                }
-                </script>
-
-            <script>
-                // GACHA SYSTEM
-                // Variables for Rare and Super Rare fish
-                var RRank = Range(1,5);
-                var SRRank = Range(5,7);
-
-                function pull_single() {
-                    var pulls = []
-                    if (score < 1) {
-                        document.getElementById
-                    }
-}
-            </script>
             <!-- JScript for TABS -->
             <script>
                 function openTab(evt, tabName){
