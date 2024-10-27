@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <audio src="/music/good_enough.mp3" controls></audio> -->
+ 
+<head>
+    <title>GACHA-DO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <!-- LOGO -->
+            <div class="icon">
+                <a href="#"><h2 class="logo"><img src="gacha_do.png" alt="GACHA-DO" width=85% height=85%></h2></a>
+            </div>  
+            
+            <!-- SCORE -->
+            <div class="bait"><p>Bait: <span id="bait">1</span></p></div>
+
+            <!-- TABS -->
+            <div class="tab">
+                <ul>
+                    <li><a href="#" class="tablinks" onclick="openTab(event, 'TO-DO')" id="defaultOpen">TO-DO</a></li>
+                    <li><a href="#" class="tablinks" onclick="openTab(event, 'GACHA')">GACHA</a></li>
+                    <li><a href="#" class="tablinks" onclick="openTab(event, 'AQUARIUM')">AQUARIUM</a></li>
+                </ul>
+            </div>
+            
+            <!-- TO-DO PAGE -->
+            <div id="TO-DO" class="tabcontent">                
+                <h3>TODO</h3>
+                <input type="text" id="myInput" placeholder="Today I will...">
+                <span onclick="newElement()" class="addBtn">Add</span>
+
+                <ul1 id="myUL">
+                    <li1 class="checked">Visit GACHA-DO!</li1>
+                    <li1>Make a task!</li1>
+                </ul1>
+    
+                <script>
+                    // Increases bait score
+                    function increaseBait() {
+                        bait++;
+                        baitElement.textContent = bait;
+                    }
+
+                    function decreaseBait() {
+                        bait -= 1
+                        baitElement.textContent = bait;
+                    }
+
+                    // Create close button
+                    var myNodelist = document.getElementsByTagName("LI1");
+                    for (var i=0; i < myNodelist.length; i++) {
+                        var span = document.createElement("SPAN");
+                        var txt = document.createTextNode("\u00D7");
+                        span.className = "close";
+                        span.appendChild(txt);
+                        myNodelist[i].appendChild(span);
+                    }
+                    
+                    // Makes close button function
+                    var close = document.getElementsByClassName("close");
+                    for (var i=0; i < close.length; i++) {
+                        close[i].onclick = function() {
+                            var div = this.parentElement;
+                            div.style.display = "none";                            
+                        }
+                        
+                    }
+                    
+                    // Creates checkmark when clicking task
+                    var list = document.querySelector("ul1");
+                    list.addEventListener('click', function(ev) {
+                        if (ev.target.tagName === "LI1") {
+                            ev.target.classList.toggle("checked");
+                        
+                        // Increase or decrease bait score when item is checked/unchecked
+                        if (ev.target.classList.contains("checked")) {
+                            increaseBait();
+                        }
+                        else {
+                            decreaseBait();
+                        }
+                        }
+                    }, false);
+                    
+                    // Creates new task when clicking the add button
+                    function newElement() {
+                        var li1 = document.createElement("li1");
+                        var inputValue = document.getElementById("myInput").value;
+                        var t = document.createTextNode(inputValue);
+                        li1.appendChild(t);
+                        if (inputValue == "") {
+                        alert("Write something pls!");
+                        } else {
+                        document.getElementById("myUL").appendChild(li1);
+                        }
+                        document.getElementById("myInput").value = "";
+                        var span = document.createElement("SPAN");
+                        var txt = document.createTextNode("\u00D7");
+                        span.className = "close";
+                        span.appendChild(txt);
+                        li1.appendChild(span);
+    
+                        for (i = 0; i < close.length; i++) {
+                            close[i].onclick = function() {
+                                var div = this.parentElement;
+                                div.style.display = "none";
+                            }
+                        }
+                    }
+                    // Tracking score
+                    let bait = 1
+                    const baitElement = document.getElementById("bait");
+                    </script>
+
+            </div>
+
+            <!-- GACHA PAGE -->
+            <div id="GACHA" class="tabcontent">
+                
+            </div>
+
+            <!-- AQUARIUM -->
+            <div id="AQUARIUM" class="tabcontent">
+                <!-- <img src="hammerhead_gray.png" draggable="true" ondragstart="drag(evt)" id="hhgry" width="10%" height="10%">-->
+                <div id="aquarium_box" ondrop="drop(evt)" ondragover="allowDrop(evt)">
+                    <img src="aquarium_box.png" alt="Aquarium Box" style="width: 800px;height: 500px;margin: auto;">
+                </div>
+                <div id="fish_collection"></div>
+            </div>
+            
+            <!-- GACHA SYSTEM -->
+            
+            <!-- POPUP when no bait -->
+            <div class="noBait" onclick="noBait()">Click me!
+                <span class="noBaittext" id ="noBait">Popup text...</span>
+            </div>
+
+            <script>
+                // When the user clicks on <div>, open the popup
+                function myFunction() {
+                  var popup = document.getElementById("myPopup");
+                  popup.classList.toggle("show");
+                }
+                </script>
+
+            <script>
+                // GACHA SYSTEM
+                // Variables for Rare and Super Rare fish
+                var RRank = Range(1,5);
+                var SRRank = Range(5,7);
+
+                function pull_single() {
+                    var pulls = []
+                    if (score < 1) {
+                        document.getElementById
+                    }
+}
+            </script>
+            <!-- JScript for TABS -->
+            <script>
+                function openTab(evt, tabName){
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent")
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                }
+                document.getElementById("defaultOpen").click();
+            </script>
+
+            <!-- JScript for Draggable Fishies -->
+            <script>
+            function allowDrop(fish){
+                fish.preventDefault();
+            }
+
+            function drag(fish){
+                fish.dataTransfer.setData("text", fish.target.id);
+            }
+
+            function drop(fish){
+                fish.preventDefault();
+                var data = fish.dataTransfer.getData("text");
+                fish.target.appendChild(document.getElementById(data));
+            }
+            </script>
+
+        </div>
+    </div>
+</body>
+</html>
