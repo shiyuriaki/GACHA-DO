@@ -78,6 +78,7 @@ document.getElementById("gacha_buttonx1").addEventListener("click", () => {
         totalCatches.push(catches);
         updateTotalcatches();
         addToRaritySection(catches);
+        addToAquarium(catches);
     //document.getElementById("catches").innerText = `You caught a(n) ${catches.rarity} ${catches.name}!`;
     } else {
         document.getElementById("catches").innerText = "Need more bait...";
@@ -109,10 +110,11 @@ function addToRaritySection(fish) {
 
 function addToAquarium(fish) {
     const layer = document.getElementById("aquarium-fish-layer");
+
     const img = document.createElement("img");
     img.src = fish.image;
     img.alt = `${fish.rariry} ${fish.name}`;
-    img.className = 'aquarium-fish';
+    img.className = "aquarium-fish";
 
     const randomX = Math.random() * 90;
     const randomY = Math.random() * 80;
