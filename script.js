@@ -39,7 +39,7 @@ function catchFish() {
 function getImage(rarity) {
     const images = fishImages[rarity];
     const randIndex = Math.floor(Math.random() * images.length);
-    return images[randIndex];
+    return 'assets/fish/${images[randIndex]}';
 }
 
 
@@ -62,8 +62,8 @@ function catchMultiple() {
         for (let i = 0; i < perCatch; i++ ) {
             const catches = catchFish();
             totalCatches.push(catches);
-            addToRaritySection(catches);
-            updateTotalcatches();           
+            updateTotalcatches();    
+            addToRaritySection(catches);       
         }
     } else {
         document.getElementById("catches").innerText = "Need more bait...";
@@ -75,8 +75,8 @@ document.getElementById("gacha_buttonx1").addEventListener("click", () => {
         baitElement.textContent = bait;
         const catches = catchFish();
         totalCatches.push(catches);
-        addToRaritySection(catches);
         updateTotalcatches();
+        addToRaritySection(catches);
     //document.getElementById("catches").innerText = `You caught a(n) ${catches.rarity} ${catches.name}!`;
     } else {
         document.getElementById("catches").innerText = "Need more bait...";
@@ -99,9 +99,9 @@ function addToRaritySection(fish) {
         const label = document.createElement('p');
         label.textContent = '${fish.rarity} ${fish.name}';
 
-        container.appendChild(img);
-        container.appendChild(label);
-        section.appendChild(container);
+        /*container.appendChild(img);
+        container.appendChild(label);*/
+        section.appendChild(img);
 
     }
 }
