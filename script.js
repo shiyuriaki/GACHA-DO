@@ -63,7 +63,8 @@ function catchMultiple() {
             const catches = catchFish();
             totalCatches.push(catches);
             updateTotalcatches();    
-            addToRaritySection(catches);       
+            addToRaritySection(catches);  
+            addToAquarium(catches);     
         }
     } else {
         document.getElementById("catches").innerText = "Need more bait...";
@@ -106,6 +107,21 @@ function addToRaritySection(fish) {
     }
 }
 
+function addToAquarium(fish) {
+    const layer = document.getElementById("aquarium-fish-layer");
+    const img = document.createElement("img");
+    img.src = fish.image;
+    img.alt = `${fish.rariry} ${fish.name}`;
+    img.className = 'aquarium-fish';
+
+    const randomX = Math.random() * 90;
+    const randomY = Math.random() * 80;
+
+    img.style.left = `${randomX}%`;
+    img.style.top = `${randomY}%`;
+
+    layer.appendChild(img);
+}
 
 document.getElementById("gacha_buttonx5").addEventListener("click", catchMultiple);
 baitElement.textContent = bait;
