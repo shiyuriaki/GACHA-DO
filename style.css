@@ -384,12 +384,12 @@ input {
     overflow: hidden;
 }
 
-#aquarium-background {
+/*#aquarium-background {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
-}
+}*/
 
 #aquarium-fish-layer {
     position: absoulute;
