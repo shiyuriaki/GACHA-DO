@@ -414,3 +414,19 @@ input {
     0% { transform: translateX(0); }
     100% { transform: translateX(20px);}
 }
+
+#intro-aquarium{
+    align-self: flex;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(58, 116, 169);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: aliceblue;
+    font-weight: bold; 
+    font-size: 25px;
+    font-family: LoveDays;
+}
