@@ -380,7 +380,7 @@ input {
     height: 700px;
     margin: 0 auto;
     overflow: hidden;
-    background-image: url("/assets/aquarium_box.png");
+    background-image: url("assets/aquarium_box.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
