@@ -380,10 +380,14 @@ input {
     height: 700px;
     margin: 0 auto;
     overflow: hidden;
+    background-image: "aquarium_box.png";
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: 0;
 }
 
-#aquarium-background {
+/*#aquarium-background {
     z-index: 0;
     position:absolute;
     top: 0;
@@ -392,7 +396,7 @@ input {
     height: 100%;
     object-fit: cover;
     z-index: 0;
-}
+}*/
 
 #aquarium-fish-layer {
     position: absolute;
