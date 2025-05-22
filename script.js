@@ -39,7 +39,7 @@ function catchFish() {
 function getImage(rarity) {
     const images = fishImages[rarity];
     const randIndex = Math.floor(Math.random() * images.length);
-    return 'assets/fish/${images[randIndex]}';
+    return images[randIndex];
 }
 
 
