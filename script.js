@@ -84,7 +84,7 @@ document.getElementById("gacha_buttonx1").addEventListener("click", () => {
 });    
 
 function addToRaritySection(fish) {
-    const sectionId = '${fish.rarity.toLowerCase()}Catches';
+    const sectionId = `${fish.rarity.toLowerCase()}Catches`;
     const section = document.getElementById(sectionId);
 
     if (section) {
@@ -93,11 +93,11 @@ function addToRaritySection(fish) {
 
         const img = document.createElement('img');
         img.src = fish.image;
-        img.alt = '${fish.rarity} image';
+        img.alt = `${fish.rarity} image`;
         img.className = 'catch_image';
 
         const label = document.createElement('p');
-        label.textContent = '${fish.rarity} ${fish.name}';
+        label.textContent = `${fish.rarity} ${fish.name}`;
 
         /*container.appendChild(img);
         container.appendChild(label);*/
