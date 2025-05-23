@@ -381,8 +381,8 @@ input {
     margin: 0 auto;
     overflow: hidden;
     background-image: url("assets/aquarium_box.png");
-    background-size: cover;
-    background-position: top center;
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
 }
