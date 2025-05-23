@@ -430,7 +430,7 @@ input {
     100% { transform: translateX(20px);}
 }
 
-#intro-aquarium{
+#intro-aquarium {
     position: relative;
     z-index: 5;
     align-self: flex;
@@ -441,7 +441,7 @@ input {
     
 }
 
-h2{
+h2 {
     align-self: flex;
     text-align: center;
     text-decoration: none;
@@ -452,4 +452,34 @@ h2{
     font-size: 50px;
     font-family: LoveDays;
     z-index: 3;
+}
+
+#fish-collection {
+    position: relative;
+    z-index: 5;
+    align-self: flex;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+
+h3 {
+    align-self: flex;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(58, 116, 169);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: aliceblue;
+    font-weight: bold; 
+    font-size: 50px;
+    font-family: LoveDays;
+    z-index: 3;
+}
+
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
