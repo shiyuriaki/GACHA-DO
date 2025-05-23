@@ -109,18 +109,26 @@ function addToRaritySection(fish) {
 }
 
 function addToAquarium(fish) {
+    const glassZone = document.getElementById("glass-zone");
     const layer = document.getElementById("aquarium-fish-layer");
 
     const img = document.createElement("img");
     img.src = fish.image;
-    img.alt = `${fish.rariry} ${fish.name}`;
+    img.alt = `${fish.rarity} ${fish.name}`;
     img.className = "aquarium-fish";
 
-    const randomX = Math.random() * 90;
-    const randomY = Math.random() * 80;
+    const fishWidth = 50;
+    const fishHeight = 50;
 
-    img.style.left = `${randomX}%`;
-    img.style.top = `${randomY}%`;
+    const maxX = glassZone.clientWidth - fishWidth;
+    const maxY = glassZone.clientHeight - fishHeight;
+
+    // Random position within bounds
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    img.style.left = `${randomX}px`;
+    img.style.top = `${randomY}px`;
 
     layer.appendChild(img);
 }
