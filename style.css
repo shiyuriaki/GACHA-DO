@@ -410,10 +410,10 @@ input {
 
 #glass-zone {
     position: absolute;
-    top: 100px;
-    left: 120px;
-    width: 600px;
-    height: 400px;
+    top: 600px;
+    left: 700px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     z-index: 1;
 }
