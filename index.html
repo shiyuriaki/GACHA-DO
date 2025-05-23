@@ -138,10 +138,15 @@
                 </div>
                 
                 <script type="text/javascript">
-                    document.addEventListener("mousemove", moveElement);
-                    function moveElement(event) {
-                        document.getElementById("boat").style.left = (event.clientX-350) + "px";
-                    }
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const boat = document.getElementById("boat");
+                        const maxX = window.innerWidth - 350;
+    
+                        document.addEventListener("mousemove", function(event) {
+                            const xPos = Math.max(0, Math.min(event.clientX - 175, maxX));
+                            boat.style.left = xPos + "px";
+                        });
+                    });
                 </script>
             
                 <!-- GACHA SYSTEM -->

@@ -2,6 +2,8 @@ const catchCostx1 = 1;
 const catchCostx5 = 5;
 const perCatch = 5;
 const totalCatches = [];
+let bait = 1;
+const baitElement = document.getElementById("bait");
 
 
 const fishies = [
@@ -117,22 +119,43 @@ function addToAquarium(fish) {
     img.alt = `${fish.rarity} ${fish.name}`;
     img.className = "aquarium-fish";
 
-    const fishWidth = 50;
-    const fishHeight = 50;
+    // Get aquarium dimensions
+    const aquariumWidth = glassZone.clientWidth - 50; // minus fish width
+    const aquariumHeight = glassZone.clientHeight - 50; // minus fish height
 
-    const maxX = glassZone.clientWidth - fishWidth;
-    const maxY = glassZone.clientHeight - fishHeight;
-
-    // Random position within bounds
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
+    // Random position within aquarium bounds
+    const randomX = Math.floor(Math.random() * aquariumWidth);
+    const randomY = Math.floor(Math.random() * aquariumHeight);
 
     img.style.left = `${randomX}px`;
     img.style.top = `${randomY}px`;
 
+    // Add slight rotation for more natural look
+    const rotation = Math.random() * 30 - 15; // -15 to 15 degrees
+    img.style.transform = `rotate(${rotation}deg)`;
+
     layer.appendChild(img);
 }
 
-document.getElementById("gacha_buttonx5").addEventListener("click", catchMultiple);
-baitElement.textContent = bait;
+document.getElementById("gacha_buttonx1").addEventListener("click", () => {
+    if (bait < catchCostx1) {
+        showBaitError();
+        return;
+    }
+    
+    bait -= catchCostx1;
+    baitElement.textContent = bait;
+    const catches = catchFish();
+    totalCatches.push(catches);
+    updateTotalcatches();
+    addToAquarium(catches);
+});
+
+function showBaitError() {
+    const catchesDiv = document.getElementById("catches");
+    catchesDiv.innerHTML = `<div class="error">Not enough bait! Complete more tasks!</div>`;
+    setTimeout(() => {
+        catchesDiv.innerHTML = "";
+    }, 2000);
+}
 
