@@ -376,14 +376,14 @@ input {
 
 #aquarium-container {
     position: relative;
-    width: 100%;
+    width: 800px;
     height: 700px;
     margin: 0 auto;
     overflow: hidden;
 
     background-image: url("assets/aquarium_box.png");
     background-size: contain;
-    background-position: top-center;
+    background-position: center top;
     background-repeat: no-repeat;
 
     display: flex;
