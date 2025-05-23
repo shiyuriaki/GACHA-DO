@@ -422,8 +422,8 @@ input {
 }
 
 #intro-aquarium{
-    position: relative;
-    z-index: 3;
+    position: absolute;
+    z-index: 5;
     align-self: flex;
     text-align: center;
    
