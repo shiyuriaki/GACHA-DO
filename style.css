@@ -391,8 +391,8 @@ input {
     justify-content: flex-start;
     align-items: center;
 
-    padding-top: 20px;
-    padding-bottom: 150px;
+    /*padding-top: 20px;
+    padding-bottom: 150px;*/
     z-index: 0;
 }
 
