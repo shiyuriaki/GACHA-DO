@@ -380,15 +380,19 @@ input {
     height: 700px;
     margin: 0 auto;
     overflow: hidden;
+
     background-image: url("assets/aquarium_box.png");
     background-size: contain;
     background-position: top-center;
     background-repeat: no-repeat;
-    padding-bottom: 100px;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
+    padding-top: 20px;
+    padding-bottom: 150px;
     z-index: 0;
 }
 
@@ -432,6 +436,7 @@ input {
     align-self: flex;
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 10px;
    
     
 }
