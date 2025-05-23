@@ -422,7 +422,7 @@ input {
 }
 
 #intro-aquarium{
-    position: absolute;
+    position: relative;
     z-index: 5;
     align-self: flex;
     text-align: center;
@@ -431,6 +431,7 @@ input {
 }
 
 h2{
+    align-self: flex;
     text-align: center;
     text-decoration: none;
     color: rgb(58, 116, 169);
