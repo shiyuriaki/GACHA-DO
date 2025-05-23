@@ -381,7 +381,7 @@ input {
     margin: 0 auto;
     overflow: hidden;
     background-image: url("assets/aquarium_box.png");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
@@ -437,7 +437,7 @@ h2{
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: aliceblue;
     font-weight: bold; 
-    font-size: 25px;
+    font-size: 50px;
     font-family: LoveDays;
     z-index: 3;
 }
