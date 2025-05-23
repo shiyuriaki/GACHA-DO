@@ -2,8 +2,6 @@ const catchCostx1 = 1;
 const catchCostx5 = 5;
 const perCatch = 5;
 const totalCatches = [];
-let bait = 1;
-const baitElement = document.getElementById("bait");
 
 
 const fishies = [
@@ -80,7 +78,7 @@ document.getElementById("gacha_buttonx1").addEventListener("click", () => {
         totalCatches.push(catches);
         updateTotalcatches();
         addToRaritySection(catches);
-        addToAquarium(catches);
+        addToAquarium(catches)
     //document.getElementById("catches").innerText = `You caught a(n) ${catches.rarity} ${catches.name}!`;
     } else {
         document.getElementById("catches").innerText = "Need more bait...";
@@ -111,51 +109,22 @@ function addToRaritySection(fish) {
 }
 
 function addToAquarium(fish) {
-    const glassZone = document.getElementById("glass-zone");
     const layer = document.getElementById("aquarium-fish-layer");
 
     const img = document.createElement("img");
     img.src = fish.image;
-    img.alt = `${fish.rarity} ${fish.name}`;
+    img.alt = `${fish.rariry} ${fish.name}`;
     img.className = "aquarium-fish";
 
-    // Get aquarium dimensions
-    const aquariumWidth = glassZone.clientWidth - 50; // minus fish width
-    const aquariumHeight = glassZone.clientHeight - 50; // minus fish height
+    const randomX = Math.random() * 90;
+    const randomY = Math.random() * 80;
 
-    // Random position within aquarium bounds
-    const randomX = Math.floor(Math.random() * aquariumWidth);
-    const randomY = Math.floor(Math.random() * aquariumHeight);
-
-    img.style.left = `${randomX}px`;
-    img.style.top = `${randomY}px`;
-
-    // Add slight rotation for more natural look
-    const rotation = Math.random() * 30 - 15; // -15 to 15 degrees
-    img.style.transform = `rotate(${rotation}deg)`;
+    img.style.left = `${randomX}%`;
+    img.style.top = `${randomY}%`;
 
     layer.appendChild(img);
 }
 
-document.getElementById("gacha_buttonx1").addEventListener("click", () => {
-    if (bait < catchCostx1) {
-        showBaitError();
-        return;
-    }
-    
-    bait -= catchCostx1;
-    baitElement.textContent = bait;
-    const catches = catchFish();
-    totalCatches.push(catches);
-    updateTotalcatches();
-    addToAquarium(catches);
-});
-
-function showBaitError() {
-    const catchesDiv = document.getElementById("catches");
-    catchesDiv.innerHTML = `<div class="error">Not enough bait! Complete more tasks!</div>`;
-    setTimeout(() => {
-        catchesDiv.innerHTML = "";
-    }, 2000);
-}
+document.getElementById("gacha_buttonx5").addEventListener("click", catchMultiple);
+baitElement.textContent = bait;
 
