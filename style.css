@@ -420,7 +420,7 @@ input {
 .aquarium-fish {
     position: absolute;
     width: 50px;
-    height: auto;
+    /*height: auto;*/
     animation: swim 8s infinite alternate ease-in-out;
     z-index: 2;
 }
