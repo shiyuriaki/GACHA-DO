@@ -408,7 +408,7 @@ input {
 }*/
 
 #glass-zone {
-    position: absolute;
+    position: relative;
     top: 14%;
     /*transform: translateY(-50%);*/
     width: 100%;
