@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
     const perCatch = 5;
     const totalCatches = [];
 
-    let bait = 20;
+    //let bait = 20;
     const baitElement = document.getElementById("bait-count");
     baitElement.textContent = bait;
 
