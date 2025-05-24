@@ -2,6 +2,8 @@ const catchCostx1 = 1;
 const catchCostx5 = 5;
 const perCatch = 5;
 const totalCatches = [];
+let bait = 20;
+const baitElement = document.createElementById("bait-count");
 
 
 const fishies = [
@@ -113,8 +115,8 @@ function addToAquarium(fish) {
     const layer = document.getElementById("aquarium-fish-layer");
 
     const img = document.createElement("img");
-    img.src = fish.image;
-    img.alt = `${fish.rariry} ${fish.name}`;
+    img.src = `assets/${fish.image}`;
+    img.alt = `${fish.rarity} ${fish.name}`;
     img.className = "aquarium-fish";
 
     const maxX = glassZone.clientWidth - 50;
