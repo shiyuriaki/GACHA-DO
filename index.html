@@ -33,8 +33,8 @@
             <!-- HOME -->
              <div id="HOME" class="tabcontent">
                 <h1 id="home_logo"><img src="gacha_do.png" alt="GACHA-DO" width=40% height=40% style="margin-left: 40px;animation: gentleRock 5s infinite;"></h1>
-                <h3 id="home_text">Welcome to GACHA-DO! The interactive GACHA-To-Do List</h3>
-                <h3>Here, you can collect an assortment of fish by FISHING THEM!! To collect your fishies, you will have to complete your tasks to get BAIT under To-Do!</h3>
+                <h2 id="home_text">Welcome to GACHA-DO! The interactive GACHA-To-Do List</h2>
+                <h3 id="home_sec">Here, you can collect an assortment of fish by FISHING THEM!! To collect your fishies, you will have to complete your tasks to get BAIT under To-Do!</h3>
              </div>
 
             <!-- TO-DO PAGE -->
@@ -138,10 +138,15 @@
                 </div>
                 
                 <script type="text/javascript">
-                    document.addEventListener("mousemove", moveElement);
-                    function moveElement(event) {
-                        document.getElementById("boat").style.left = (event.clientX-350) + "px";
-                    }
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const boat = document.getElementById("boat");
+                        const maxX = window.innerWidth - 350;
+    
+                        document.addEventListener("mousemove", function(event) {
+                            const xPos = Math.max(0, Math.min(event.clientX - 175, maxX));
+                            boat.style.left = xPos + "px";
+                        });
+                    });
                 </script>
             
                 <!-- GACHA SYSTEM -->
@@ -159,30 +164,43 @@
 
             <!-- AQUARIUM -->
             <div id="AQUARIUM" class="tabcontent">
-                <div id="aquarium_box" style="display: flex; align-items: center;">
-                    <img src="aquarium_box.png" alt="Aquarium Box" style="width: 800px;height: 500px;margin: auto;"></div>              
-                    <div class="aquarium_text">Your Aquarium</div>
-                    <div id="fish_collection" style="padding-left: 20px;">
+                <div id="aquarium-container">
+                    <!--<img src="aquarium_box.png" id="aquarium-background" alt="Aquarium Background">-->
+                    <div id="intro-aquarium">
+                        <h2>Welcome to Your Aquarium</h2>
+                    </div>
+
+                    <div id="glass-zone">
+                        <div id="aquarium-fish-layer"></div>
+                    </div>
+                    <!--<span id="bait-count"></span>-->
+
+                    
+                </div>
+               
+                <div id="fish-collection">
+                        <h3>Fishing Pool</h3>
                         <ul>
                             <li style="left: 50%; display: inline-block;">
-                                <img src="rainbow_shell.png" alt="rainbow shell" width=20% style="animation: fishJiggle 0.728s infinite;">
-                                <img src="pink_shell.png" alt="pink shell" width=20% style="animation: fishJiggle 0.718s infinite;">
-                                <img src="purple_shell.png" alt="purple shell" width=20% style="animation: fishJiggle 0.712s infinite;">
-                                <img src="red_fish.png" alt="red fish" width=20% style="animation: fishJiggle 0.713s infinite;">
-                                <img src="purple_fish.png" alt="purple fish" width=20% style="animation: fishJiggle 0.721s infinite;">
-                                <img src="green_fish.png" alt="green fish" width=20% style="animation: fishJiggle 0.733s infinite;">
-                                <img src="pink_squid.png" alt="pink squid" width=20% style="animation: fishJiggle 0.745s infinite;">
-                                <img src="blue_squid.png" alt="blue squid" width=20% style="animation: fishJiggle 0.751s infinite;">
-                                <img src="green_squid.png" alt="green squid" width=20% style="animation: fishJiggle 0.761s infinite;">
-                                <img src="hammerhead_gray.png" alt="hammerhead gray" width=20% style="animation: fishJiggle 0.77s infinite;">
-                                <img src="hammerhead_purple.png" alt="hammerhead purple" width=20% style="animation: fishJiggle 0.718s infinite;">
-                                <img src="blue_jellyfish.png" alt="blue jellyfish" width=20% style="animation: fishJiggle 0.79s infinite;">
-                                <img src="purple_jellyfish.png" alt="purple jellyfish" width=20% style="animation: fishJiggle 0.712s infinite;">
-                                <img src="blue_jellyfish.png" alt="blue jellyfish" width=20% style="animation: fishJiggle 0.713s infinite;">
-                                <img src="rainbow_jellyfish.png" alt="rainbow jellyfish" width=20% style="animation: fishJiggle 0.714s infinite;">
+                                <img src="rainbow_shell.png" alt="rainbow shell" width=10% style="animation: fishJiggle 0.728s infinite;">
+                                <img src="pink_shell.png" alt="pink shell" width=10% style="animation: fishJiggle 0.718s infinite;">
+                                <img src="purple_shell.png" alt="purple shell" width=10% style="animation: fishJiggle 0.712s infinite;">
+                                <img src="red_fish.png" alt="red fish" width=10% style="animation: fishJiggle 0.713s infinite;">
+                                <img src="purple_fish.png" alt="purple fish" width=10% style="animation: fishJiggle 0.721s infinite;">
+                                <img src="green_fish.png" alt="green fish" width=10% style="animation: fishJiggle 0.733s infinite;">
+                                <img src="pink_squid.png" alt="pink squid" width=10% style="animation: fishJiggle 0.745s infinite;">
+                                <img src="blue_squid.png" alt="blue squid" width=10% style="animation: fishJiggle 0.751s infinite;">
+                                <img src="green_squid.png" alt="green squid" width=10% style="animation: fishJiggle 0.761s infinite;">
+                                <img src="hammerhead_gray.png" alt="hammerhead gray" width=10% style="animation: fishJiggle 0.77s infinite;">
+                                <img src="hammerhead_purple.png" alt="hammerhead purple" width=10% style="animation: fishJiggle 0.718s infinite;">
+                                <img src="blue_jellyfish.png" alt="blue jellyfish" width=10% style="animation: fishJiggle 0.79s infinite;">
+                                <img src="purple_jellyfish.png" alt="purple jellyfish" width=10% style="animation: fishJiggle 0.712s infinite;">
+                                <img src="blue_jellyfish.png" alt="blue jellyfish" width=10% style="animation: fishJiggle 0.713s infinite;">
+                                <img src="rainbow_jellyfish.png" alt="rainbow jellyfish" width=10% style="animation: fishJiggle 0.714s infinite;">
                             </li>
                         </ul>
                     </div>
+
 
             </div>
 
