@@ -6,8 +6,8 @@ window.addEventListener('load', () => {
     const totalCatches = [];
 
     //let bait = 20;
-    const baitElement = document.getElementById("bait-count");
-    baitElement.textContent = bait;
+    //const baitElement = document.getElementById("bait-count");
+    
 
     const fishies = [
         { name: "Common Fish", rarity: "Common", probability: 0.6 },
@@ -86,7 +86,6 @@ window.addEventListener('load', () => {
         }
     });
 
-    document.getElementById("gacha_buttonx5").addEventListener("click", catchMultiple);
 
     function addToRaritySection(fish) {
         const sectionId = `${fish.rarity.toLowerCase()}Catches`;
@@ -134,5 +133,7 @@ window.addEventListener('load', () => {
         console.log(`Fish position: left=${img.style.left}, top=${img.style.top}`);
 
     }
+    document.getElementById("gacha_buttonx5").addEventListener("click", catchMultiple);
+    baitElement.textContent = bait;
 
 });
