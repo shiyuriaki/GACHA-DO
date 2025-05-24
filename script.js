@@ -2,8 +2,8 @@ const catchCostx1 = 1;
 const catchCostx5 = 5;
 const perCatch = 5;
 const totalCatches = [];
-let bait = 20;
-const baitElement = document.createElementById("bait-count");
+//let bait = 20;
+//const baitElement = document.createElementById("bait-count");
 
 
 const fishies = [
