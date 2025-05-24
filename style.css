@@ -430,12 +430,12 @@ input {
     width: 50px;
     height: 50px;
     animation: swim 8s infinite alternate ease-in-out;
-    z-index: 2;
+    z-index: 3;
 }
 
 @keyframes swim {
     0% { transform: translateX(0) translateY(0); }
-    50% { transform: translateX(20px) traslateY(10px); }
+    50% { transform: translateX(20px) translateY(10px); }
     100% { transform: translateX(0) translateY(0);}
 }
 
