@@ -109,7 +109,7 @@ window.addEventListener('load', () => {
 
     
     function addToAquarium(fish) {
-        const glassZone = document.getElementById("glass-zone");
+        //const glassZone = document.getElementById("glass-zone");
         const layer = document.getElementById("aquarium-fish-layer");
 
         const img = document.createElement("img");
@@ -126,10 +126,10 @@ window.addEventListener('load', () => {
         const randomY = Math.random() * 80;
 
         img.style.position = "absolute";
-        img.style.left = `${randomX}px`;
-        img.style.top = `${randomY}px`;
+        img.style.left = `${randomX}vw`;
+        img.style.top = `${randomY}vh`;
 
-        glassZone.appendChild(img);
+        layer.appendChild(img);
         
         console.log(`Fish position: left=${img.style.left}, top=${img.style.top}`);
 
