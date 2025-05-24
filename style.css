@@ -393,7 +393,6 @@ input {
 
     /*padding-top: 20px;
     padding-bottom: 150px;*/
-    z-index: 0;
 }
 
 /*#aquarium-background {
@@ -416,6 +415,7 @@ input {
     height: 500px;
     overflow: hidden;
     z-index: 1;
+    border: 1px solid rgba(255,0,0,0.3); /* Temporary for debugging */
 }
 
 #aquarium-fish-layer {

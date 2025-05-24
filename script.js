@@ -120,13 +120,16 @@ function addToAquarium(fish) {
     const maxX = glassZone.clientWidth - 50;
     const maxY = glassZone.clientHeight - 50;
 
-    const randomX = Math.floor(random() * maxX);
+    const randomX = Math.floor(Math.random() * maxX);
     const randomY = Math.floor(Math.random() * maxY);
 
     img.style.left = `${randomX}px`;
     img.style.top = `${randomY}px`;
 
     layer.appendChild(img);
+
+    // Debugging log
+    console.log(`Added fish at ${randomX},${randomY} in ${glassZone.clientWidth}x${glassZone.clientHeight} zone`);
 }
 
 document.getElementById("gacha_buttonx5").addEventListener("click", catchMultiple);
