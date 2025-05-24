@@ -117,17 +117,19 @@ window.addEventListener('load', () => {
         img.alt = `${fish.rarity} ${fish.name}`;
         img.className = "aquarium-fish";
 
-        const maxX = glassZone.clientWidth - 50;
+        /*const maxX = glassZone.clientWidth - 50;
         const maxY = glassZone.clientHeight - 50;
 
         const randomX = Math.floor(Math.random() * maxX);
-        const randomY = Math.floor(Math.random() * maxY);
+        const randomY = Math.floor(Math.random() * maxY);*/
+        const randomX = Math.random() * 90;
+        const randomY = Math.random() * 80;
 
         img.style.position = "absolute";
         img.style.left = `${randomX}px`;
         img.style.top = `${randomY}px`;
 
-        layer.appendChild(img);
+        glassZone.appendChild(img);
         
         console.log(`Fish position: left=${img.style.left}, top=${img.style.top}`);
 

@@ -141,3 +141,23 @@ let bait = 20;
 const baitElement = document.getElementById("bait-count");
 baitElement.textContent = bait;
 
+
+
+
+
+
+function addToAquarium(fish) {
+    const layer = document.getElementById("aquarium-fish-layer");
+    const img = document.createElement("img");
+    img.src = fish.image;
+    img.alt = `${fish.rariry} ${fish.name}`;
+    img.className = 'aquarium-fish';
+
+    const randomX = Math.random() * 90;
+    const randomY = Math.random() * 80;
+
+    img.style.left = `${randomX}%`;
+    img.style.top = `${randomY}%`;
+
+    layer.appendChild(img);
+}
