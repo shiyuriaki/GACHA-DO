@@ -4,9 +4,6 @@ window.addEventListener('load', () => {
     const catchCostx5 = 5;
     const perCatch = 5;
     const totalCatches = [];
-
-    //let bait = 20;
-    //const baitElement = document.getElementById("bait-count");
     
 
     const fishies = [
@@ -116,11 +113,6 @@ window.addEventListener('load', () => {
         img.alt = `${fish.rarity} ${fish.name}`;
         img.className = "aquarium-fish";
 
-        /*const maxX = glassZone.clientWidth - 50;
-        const maxY = glassZone.clientHeight - 50;
-
-        const randomX = Math.floor(Math.random() * maxX);
-        const randomY = Math.floor(Math.random() * maxY);*/
         const randomX = Math.random() * 90;
         const randomY = Math.random() * 80;
 

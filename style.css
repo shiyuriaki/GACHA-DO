@@ -58,7 +58,7 @@ h1{
     font-family: LoveDays;
 }
 
-h3{
+h2{
     text-align: center;
     text-decoration: none;
     color: rgb(58, 116, 169);
@@ -66,6 +66,17 @@ h3{
     -webkit-text-stroke-color: aliceblue;
     font-weight: bold; 
     font-size: 25px;
+    font-family: LoveDays;
+}
+
+h3{
+    text-align: center;
+    text-decoration: none;
+    color: rgb(58, 116, 169);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: aliceblue;
+    font-weight: bold; 
+    font-size: 15px;
     font-family: LoveDays;
 }
 
