@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('load', () => {
 
     const catchCostx1 = 1;
     const catchCostx5 = 5;
