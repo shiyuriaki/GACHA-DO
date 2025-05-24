@@ -7,10 +7,6 @@ window.addEventListener('load', () => {
 
     let bait = 20;
     const baitElement = document.getElementById("bait-count");
-    if (!baitElement) {
-        console.error("bait-count element not found in DOM!");
-        return;
-    }
     baitElement.textContent = bait;
 
     const fishies = [
