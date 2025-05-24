@@ -407,8 +407,6 @@ input {
     justify-content: flex-start;
     align-items: center;
 
-    /*padding-top: 20px;
-    padding-bottom: 150px;*/
 }
 
 /*#aquarium-background {
@@ -463,8 +461,6 @@ input {
     z-index: 2;
     align-self: flex;
     text-align: center;
-    /*margin-top: 20px;
-    margin-bottom: 20px;*/
    
     
 }
@@ -487,9 +483,7 @@ h2 {
     z-index: 5;
     align-self: flex;
     text-align: center;
-    top: 20%;
-    /*margin-top: 20px;
-    margin-bottom: 10px;*/
+    top: 5%;
 
 }
 
