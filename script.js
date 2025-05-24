@@ -132,7 +132,9 @@ function addToAquarium(fish) {
 
     // Debugging log
     console.log(`Added fish at ${randomX},${randomY} in ${glassZone.clientWidth}x${glassZone.clientHeight} zone`);
-}
+    console.log(glassZone.clientWidth, glassZone.clientHeight);
+
+}   
 
 document.getElementById("gacha_buttonx5").addEventListener("click", catchMultiple);
 baitElement.textContent = bait;
