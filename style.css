@@ -411,7 +411,7 @@ input {
     position: relative;
     top: 14%;
     /*transform: translateY(-50%);*/
-    width: 800px;
+    width: 1000px;
     height: 550px;
     overflow: hidden;
     z-index: 1;
