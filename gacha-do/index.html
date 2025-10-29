@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <audio src="/music/good_enough.mp3" controls></audio> -->
+ 
+<head>
+    <title>GACHA-DO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <!-- LOGO -->
+            <div class="icon">
+                <a href="#" class="tablinks" onclick="openTab(event, 'HOME')"><h2 class="logo"><img src="gacha_do.png" alt="GACHA-DO" width=85% height=85% style="animation: gentleRock 6s infinite;"></h2></a>
+            </div>  
+            
+            <!-- BAIT SCORE -->
+            <div class="bait"><p>Bait: <span id="bait">1</span></p></div>
+            <div class="baitBucket"><img src="bait_bucket.png" alt="Bait Bucket" width=7% height=7%></div>
+
+
+            <!-- TABS -->
+
+            <div class="tab">
+                <ul>
+                    <li><a href="#" class="tablinks" onclick="openTab(event, 'HOME')" id="defaultOpen">HOME</a></li>
+                    <li><a href="#" class="tablinks" onclick="openTab(event, 'TO-DO')">TO-DO</a></li>
+                    <li><a href="#" class="tablinks" onclick="openTab(event, 'GACHA')">GACHA</a></li>
+                    <li><a href="#" class="tablinks" onclick="openTab(event, 'AQUARIUM')">AQUARIUM</a></li>
+                </ul>
+            </div>
+            
+            <!-- HOME -->
+             <div id="HOME" class="tabcontent">
+                <h1 id="home_logo"><img src="gacha_do.png" alt="GACHA-DO" width=40% height=40% style="margin-left: 40px;animation: gentleRock 5s infinite;"></h1>
+                <h3 id="home_text">Welcome to GACHA-DO! The interactive GACHA-To-Do List</h3>
+                <h3>Here, you can collect an assortment of fish by FISHING THEM!! To collect your fishies, you will have to complete your tasks to get BAIT under To-Do!</h3>
+             </div>
+
+            <!-- TO-DO PAGE -->
+            <div id="TO-DO" class="tabcontent">                
+                <h3>TODO LIST</h3>
+                <input type="text" id="myInput" placeholder="Today I will...">
+                <span onclick="newElement()" class="addBtn">Add</span>
+
+                <ul1 id="myUL">
+                    <li1 class="checked">Visit GACHA-DO!</li1>
+                    <li1>Make a task!</li1>
+                </ul1>
+    
+                <script>
+                    // Increases bait score
+                    function increaseBait() {
+                        bait++;
+                        baitElement.textContent = bait;
+                    }
+
+                    function decreaseBait() {
+                        bait -= 1
+                        baitElement.textContent = bait;
+                    }
+
+                    // Create close button
+                    var myNodelist = document.getElementsByTagName("LI1");
+                    for (var i=0; i < myNodelist.length; i++) {
+                        var span = document.createElement("SPAN");
+                        var txt = document.createTextNode("\u00D7");
+                        span.className = "close";
+                        span.appendChild(txt);
+                        myNodelist[i].appendChild(span);
+                    }
+                    
+                    // Makes close button function
+                    var close = document.getElementsByClassName("close");
+                    for (var i=0; i < close.length; i++) {
+                        close[i].onclick = function() {
+                            var div = this.parentElement;
+                            div.style.display = "none";                            
+                        }
+                        
+                    }
+                    
+                    // Creates checkmark when clicking task
+                    var list = document.querySelector("ul1");
+                    list.addEventListener('click', function(ev) {
+                        if (ev.target.tagName === "LI1") {
+                            ev.target.classList.toggle("checked");
+                        
+                        // Increase or decrease bait score when item is checked/unchecked
+                        if (ev.target.classList.contains("checked")) {
+                            increaseBait();
+                        }
+                        else {
+                            decreaseBait();
+                        }
+                        }
+                    }, false);
+                    
+                    // Creates new task when clicking the add button
+                    function newElement() {
+                        var li1 = document.createElement("li1");
+                        var inputValue = document.getElementById("myInput").value;
+                        var t = document.createTextNode(inputValue);
+                        li1.appendChild(t);
+                        if (inputValue == "") {
+                        alert("Write something pls!");
+                        } else {
+                        document.getElementById("myUL").appendChild(li1);
+                        }
+                        document.getElementById("myInput").value = "";
+                        var span = document.createElement("SPAN");
+                        var txt = document.createTextNode("\u00D7");
+                        span.className = "close";
+                        span.appendChild(txt);
+                        li1.appendChild(span);
+    
+                        for (i = 0; i < close.length; i++) {
+                            close[i].onclick = function() {
+                                var div = this.parentElement;
+                                div.style.display = "none";
+                            }
+                        }
+                    }
+                    // Tracking score
+                    let bait = 1
+                    const baitElement = document.getElementById("bait");
+                    </script>
+
+            </div>
+
+            <!-- GACHA PAGE -->
+            <div id="GACHA" class="tabcontent">
+                <div class="gacha">
+                    <img class="fishing_img" src="fishing_bg.png" alt="fishing">
+                    <img id="boat" class="boat_img" src="boat.png" alt="boat" width="350" height="300">
+
+                    
+                </div>
+                
+                <script type="text/javascript">
+                    document.addEventListener("mousemove", moveElement);
+                    function moveElement(event) {
+                        document.getElementById("boat").style.left = (event.clientX-350) + "px";
+                    }
+                </script>
+            
+                <!-- GACHA SYSTEM -->
+                
+
+                <div id="gacha_box">
+                    <h1>Fishing Time!</h1>
+                    <button id="gacha_buttonx1">x1 NET</button>
+                    <button id="gacha_buttonx5">x5 NETS</button>
+                    <div id="catches"></div>
+                </div>
+
+                <script src="script.js"></script>
+            </div>
+
+            <!-- AQUARIUM -->
+            <div id="AQUARIUM" class="tabcontent">
+                <div id="aquarium_box" style="display: flex; align-items: center;">
+                    <img src="aquarium_box.png" alt="Aquarium Box" style="width: 800px;height: 500px;margin: auto;"></div>              
+                    <div class="aquarium_text">Your Aquarium</div>
+                    <div id="fish_collection" style="padding-left: 20px;">
+                        <ul>
+                            <li style="left: 50%; display: inline-block;">
+                                <img src="rainbow_shell.png" alt="rainbow shell" width=20% style="animation: fishJiggle 0.728s infinite;">
+                                <img src="pink_shell.png" alt="pink shell" width=20% style="animation: fishJiggle 0.718s infinite;">
+                                <img src="purple_shell.png" alt="purple shell" width=20% style="animation: fishJiggle 0.712s infinite;">
+                                <img src="red_fish.png" alt="red fish" width=20% style="animation: fishJiggle 0.713s infinite;">
+                                <img src="purple_fish.png" alt="purple fish" width=20% style="animation: fishJiggle 0.721s infinite;">
+                                <img src="green_fish.png" alt="green fish" width=20% style="animation: fishJiggle 0.733s infinite;">
+                                <img src="pink_squid.png" alt="pink squid" width=20% style="animation: fishJiggle 0.745s infinite;">
+                                <img src="blue_squid.png" alt="blue squid" width=20% style="animation: fishJiggle 0.751s infinite;">
+                                <img src="green_squid.png" alt="green squid" width=20% style="animation: fishJiggle 0.761s infinite;">
+                                <img src="hammerhead_gray.png" alt="hammerhead gray" width=20% style="animation: fishJiggle 0.77s infinite;">
+                                <img src="hammerhead_purple.png" alt="hammerhead purple" width=20% style="animation: fishJiggle 0.718s infinite;">
+                                <img src="blue_jellyfish.png" alt="blue jellyfish" width=20% style="animation: fishJiggle 0.79s infinite;">
+                                <img src="purple_jellyfish.png" alt="purple jellyfish" width=20% style="animation: fishJiggle 0.712s infinite;">
+                                <img src="blue_jellyfish.png" alt="blue jellyfish" width=20% style="animation: fishJiggle 0.713s infinite;">
+                                <img src="rainbow_jellyfish.png" alt="rainbow jellyfish" width=20% style="animation: fishJiggle 0.714s infinite;">
+                            </li>
+                        </ul>
+                    </div>
+
+            </div>
+
+            <!-- JScript for TABS -->
+            <script>
+                function openTab(evt, tabName){
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent")
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                }
+                document.getElementById("defaultOpen").click();
+            </script>
+        </div>
+    </div>
+</body>
+</html>
